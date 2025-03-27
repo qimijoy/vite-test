@@ -16,3 +16,7 @@ import moduleA from './styles/style-module-1.module.css';
 import moduleB from './styles/style-module-2.module.css';
 console.log(moduleA);
 console.log(moduleB);
+
+// Import JSON
+import person from './data/person.json';
+console.log(person);
