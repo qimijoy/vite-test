@@ -20,3 +20,9 @@ console.log(moduleB);
 // Import JSON
 import person from './data/person.json';
 console.log(person);
+
+// Import image
+import image from './images/javascript.svg';
+import imageRaw from './images/javascript.svg?raw';
+console.log(image);
+console.log(imageRaw);
