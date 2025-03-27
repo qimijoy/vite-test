@@ -1,9 +1,10 @@
+/* CSS Modules */
 @import './style-module-1.module.css';
 @import './style-module-2.module.css';
 
+/* TAILWIND */
+@import "tailwindcss";
+
 body {
 	background-color: #18181A;
-	color: white;
 }
-
-
