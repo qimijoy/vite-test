@@ -9,6 +9,9 @@
     "preview": "vite preview",
     "eslint": "eslint ."
   },
+  "dependencies": {
+    "collect.js": "4.36.1"
+  },
   "devDependencies": {
     "@eslint/js": "9.23.0",
     "@qimijoy/prettier-config": "1.0.2",

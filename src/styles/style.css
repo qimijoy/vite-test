@@ -1,0 +1,9 @@
+@import './style-module-1.module.css';
+@import './style-module-2.module.css';
+
+body {
+	background-color: #18181A;
+	color: white;
+}
+
+
