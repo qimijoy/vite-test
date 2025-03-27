@@ -4,6 +4,9 @@ import './scripts/import-library';
 // Import static CSS
 import './styles/style.css';
 
+// Import static Less
+import './styles/test-less.less';
+
 // Import static CSS as ES-module
 import styles from './styles/style.css?inline';
 console.log(styles);
