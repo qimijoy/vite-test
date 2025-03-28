@@ -1,3 +1,5 @@
+import path from 'path';
+
 import Inspect from 'vite-plugin-inspect';
 import checker from 'vite-plugin-checker';
 
@@ -12,4 +14,9 @@ export default {
 			},
 		}),
 	],
+	resolve: {
+		alias: {
+			'@': path.resolve(__dirname, './src'),
+		},
+	},
 };
