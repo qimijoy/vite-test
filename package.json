@@ -6,6 +6,7 @@
     "prepare": "husky",
     "dev": "vite",
     "build": "vite build",
+    "build-staging": "vite build --mode staging",
     "preview": "vite preview",
     "eslint": "eslint ."
   },

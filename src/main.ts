@@ -31,3 +31,6 @@ import '@/styles/test-less.less';
 import { sum } from '@/scripts/function';
 
 console.log(sum(5, 3));
+
+// ENV
+console.log(import.meta.env);
