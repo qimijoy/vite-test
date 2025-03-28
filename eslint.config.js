@@ -3,6 +3,8 @@ import globals from 'globals';
 import js from '@eslint/js';
 import jsdoc from 'eslint-plugin-jsdoc';
 
+import tsESlint from 'typescript-eslint';
+
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
 export default [
@@ -12,7 +14,7 @@ export default [
 	},
 	// FILES TO LINT
 	{
-		files: ['**/*.{js,mjs,cjs}'],
+		files: ['**/*.{js,mjs,cjs,ts}'],
 	},
 	// GLOBAL LANGUAGE & LINTER SETTINGS
 	{
@@ -32,6 +34,7 @@ export default [
 
 	js.configs.recommended,
 	jsdoc.configs['flat/recommended'],
+	jsdoc.configs['flat/recommended-typescript'],
 	{
 		name: 'JS',
 		files: ['**/*.{js,mjs,cjs}'],
@@ -41,6 +44,21 @@ export default [
 		rules: {
 			...js.configs.recommended.rules,
 			...jsdoc.configs['flat/recommended'].rules,
+		},
+	},
+
+	...tsESlint.configs.recommended,
+	{
+		name: 'TS',
+		files: ['**/*.ts'],
+		plugins: {
+			jsdoc,
+		},
+		languageOptions: {
+			parser: tsESlint.parser,
+		},
+		rules: {
+			...jsdoc.configs['flat/recommended-typescript'].rules,
 		},
 	},
 
