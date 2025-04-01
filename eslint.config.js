@@ -5,6 +5,8 @@ import jsdoc from 'eslint-plugin-jsdoc';
 
 import tsESlint from 'typescript-eslint';
 
+import pluginVue from 'eslint-plugin-vue';
+
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
 export default [
@@ -14,7 +16,7 @@ export default [
 	},
 	// FILES TO LINT
 	{
-		files: ['**/*.{js,mjs,cjs,ts}'],
+		files: ['**/*.{js,mjs,cjs,ts,vue}'],
 	},
 	// GLOBAL LANGUAGE & LINTER SETTINGS
 	{
@@ -37,7 +39,7 @@ export default [
 	jsdoc.configs['flat/recommended-typescript'],
 	{
 		name: 'JS',
-		files: ['**/*.{js,mjs,cjs}'],
+		files: ['**/*.{js,mjs,cjs,vue}'],
 		plugins: {
 			jsdoc,
 		},
@@ -50,7 +52,7 @@ export default [
 	...tsESlint.configs.recommended,
 	{
 		name: 'TS',
-		files: ['**/*.ts'],
+		files: ['**/*.{ts,vue}'],
 		plugins: {
 			jsdoc,
 		},
@@ -59,6 +61,17 @@ export default [
 		},
 		rules: {
 			...jsdoc.configs['flat/recommended-typescript'].rules,
+		},
+	},
+
+	...pluginVue.configs['flat/recommended'],
+	{
+		name: 'Vue',
+		files: ['**/*.vue'],
+		languageOptions: {
+			parserOptions: {
+				parser: '@typescript-eslint/parser',
+			},
 		},
 	},
 

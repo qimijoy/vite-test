@@ -34,3 +34,11 @@ console.log(sum(5, 3));
 
 // ENV
 console.log(import.meta.env);
+
+// VUE
+// APPLICATION
+import { createApp } from 'vue';
+import App from './App.vue';
+const app = createApp(App);
+
+app.mount('#app');
